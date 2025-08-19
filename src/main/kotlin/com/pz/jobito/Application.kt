@@ -1,0 +1,29 @@
+package com.pz.jobito
+
+import com.pz.jobito.plugins.configureDatabase
+import com.pz.jobito.plugins.configureHTTP
+import com.pz.jobito.plugins.configureRouting
+import com.pz.jobito.plugins.configureSerialization
+import io.github.cdimascio.dotenv.dotenv
+import io.ktor.server.application.*
+
+fun main(args: Array<String>) {
+    loadEnv()
+    io.ktor.server.netty.EngineMain.main(args)
+}
+
+fun loadEnv() {
+    val dotenv = dotenv {
+        ignoreIfMissing = true
+    }
+    dotenv.entries().forEach {
+        System.setProperty(it.key, it.value)
+    }
+}
+
+fun Application.module() {
+    configureDatabase()
+    configureSerialization()
+    configureHTTP()
+    configureRouting()
+}
