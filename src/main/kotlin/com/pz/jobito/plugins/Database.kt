@@ -1,11 +1,9 @@
 package com.pz.jobito.plugins
 
-import com.pz.jobito.model.Tasks
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import org.jetbrains.exposed.sql.Database
-import org.jetbrains.exposed.sql.SchemaUtils
-import org.jetbrains.exposed.sql.transactions.transaction
+import org.flywaydb.core.Flyway
 import io.github.cdimascio.dotenv.dotenv
 
 fun configureDatabase() {
@@ -22,9 +20,14 @@ fun configureDatabase() {
     }
     
     val dataSource = HikariDataSource(config)
-    Database.connect(dataSource)
     
-    transaction {
-        SchemaUtils.create(Tasks)
-    }
+    // Run Flyway migrations
+    val flyway = Flyway.configure()
+        .dataSource(dataSource)
+        .locations("classpath:db/migration")
+        .load()
+    
+    flyway.migrate()
+    
+    Database.connect(dataSource)
 }

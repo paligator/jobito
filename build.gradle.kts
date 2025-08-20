@@ -32,6 +32,8 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-java-time:0.43.0")
     implementation("mysql:mysql-connector-java:8.0.33")
     implementation("com.zaxxer:HikariCP:5.0.1")
+    implementation("org.flywaydb:flyway-core:9.22.3")
+    implementation("org.flywaydb:flyway-mysql:9.22.3")
     
     // Logging
     implementation("ch.qos.logback:logback-classic:1.4.11")
