@@ -25,6 +25,11 @@ dependencies {
     implementation("io.ktor:ktor-server-default-headers:2.3.4")
     implementation("io.ktor:ktor-server-cors:2.3.4")
     
+    // Ktor Client
+    implementation("io.ktor:ktor-client-core:2.3.4")
+    implementation("io.ktor:ktor-client-cio:2.3.4")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.4")
+    
     // Database
     implementation("org.jetbrains.exposed:exposed-core:0.43.0")
     implementation("org.jetbrains.exposed:exposed-dao:0.43.0")

@@ -38,7 +38,7 @@ data class Task(
 
 @Serializable
 data class CreateTaskRequest(
-    val title: String,
+    val taskName: String,
     val description: String? = null
 )
 

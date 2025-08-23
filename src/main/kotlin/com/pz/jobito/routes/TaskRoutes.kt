@@ -56,9 +56,11 @@ fun Route.taskRoutes() {
         
         post {
             val request = call.receive<CreateTaskRequest>()
+            call.application.environment.log.info("Received task creation request: taskName='${request.taskName}', description='${request.description}'")
+            
             val task = transaction {
                 val taskEntity = TaskEntity.new {
-                    title = request.title
+                    title = request.taskName
                     description = request.description
                     completed = false
                     createdAt = LocalDateTime.now()

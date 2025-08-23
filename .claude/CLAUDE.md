@@ -21,8 +21,24 @@ This is a Kotlin-based task management API built with Ktor server framework. The
 - **Data Models**: Task entities defined in `model/Task.kt` with both database entities and serializable DTOs
 
 
-### Plugin Architecture
+### Project Structure Architecture
+-**plugins** configurations for database, http, routing, etc...
+-**routes** http routing for application
+-**Services** service keep basic business logic
+-**Model** object
 
+### Technology & Architecture
+- **Frameworks & Versions:**
+    - http requests: OkHttp
+- **Language:**
+    - kotlin
+- **Database & ORM:**
+    - MySql
+- **UI & Styling:** TODO: List your UI framework and styling approach
+- **Authentication:** TODO: Specify your authentication system
+- **Key Architectural Patterns:** TODO: List your main architectural patterns
+
+### Configs
 The application is modularized through Ktor plugins in `plugins/`:
 - `Database.kt` - Database configuration, connection pooling, and Flyway migrations
 - `HTTP.kt` - HTTP server configuration  
@@ -48,3 +64,19 @@ The application is modularized through Ktor plugins in `plugins/`:
 - MySQL connector for database
 - Flyway for database migrations
 - Kotlinx Serialization for JSON handling
+
+### Package structure
+- root package is com.pz.jobito
+-- ** each new service or model must have new package following this structure ** 
+- services package is com.pz.jobito.service
+- api model package is com.pz.jobito.model.api
+- service model package is com.pz.jobito.model
+
+### Rest api
+In case of any error will return object [ErrorResponse]
+{ 
+  status: "error",
+  message: "Error message",
+  details: "Any other details if it is possible"
+}
+
