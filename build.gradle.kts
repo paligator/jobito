@@ -29,6 +29,7 @@ dependencies {
     implementation("io.ktor:ktor-client-core:2.3.4")
     implementation("io.ktor:ktor-client-cio:2.3.4")
     implementation("io.ktor:ktor-client-content-negotiation:2.3.4")
+    implementation("io.ktor:ktor-client-logging:2.3.4")
     
     // Database
     implementation("org.jetbrains.exposed:exposed-core:0.43.0")
@@ -42,6 +43,7 @@ dependencies {
     
     // Logging
     implementation("ch.qos.logback:logback-classic:1.4.11")
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
     
     // Environment Variables
     implementation("io.github.cdimascio:dotenv-kotlin:6.4.1")
