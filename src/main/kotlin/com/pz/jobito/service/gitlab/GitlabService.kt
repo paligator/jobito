@@ -8,6 +8,8 @@ import io.ktor.client.statement.*
 import io.ktor.http.*
 import kotlinx.serialization.Serializable
 import mu.KotlinLogging
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class GitlabService {
     companion object {
@@ -17,7 +19,14 @@ class GitlabService {
     @Serializable
     private data class GitlabMergeRequest(
         val title: String,
-        val web_url: String
+        val web_url: String,
+        val author: GitlabAuthor,
+        val created_at: String
+    )
+
+    @Serializable
+    private data class GitlabAuthor(
+        val name: String
     )
 
     suspend fun waitingForMe(): List<MergeRequest> {
@@ -36,7 +45,9 @@ class GitlabService {
             return response.map { 
                 MergeRequest(
                     name = it.title,
-                    url = it.web_url
+                    url = it.web_url,
+                    authorName = it.author.name,
+                    createdAt = LocalDateTime.parse(it.created_at, DateTimeFormatter.ISO_OFFSET_DATE_TIME)
                 )
             }
         } else {
