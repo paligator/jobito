@@ -7,7 +7,9 @@ import io.ktor.server.routing.*
 
 fun Application.configureRouting() {
     routing {
-        taskRoutes()
-        gitlabRoutes()
+        route("/api") {
+            taskRoutes()
+            gitlabRoutes()
+        }
     }
 }
