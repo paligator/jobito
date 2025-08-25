@@ -1,4 +1,4 @@
-package com.pz.jobito.plugins
+package com.pz.jobito.configs
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource

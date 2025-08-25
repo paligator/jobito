@@ -1,4 +1,4 @@
-package com.pz.jobito.plugins
+package com.pz.jobito.configs
 
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
@@ -21,7 +21,7 @@ object HttpClientApp {
             install(Logging) {
                 logger = object : Logger {
                     override fun log(message: String) {
-                        com.pz.jobito.plugins.logger.info { message }
+                        com.pz.jobito.configs.logger.info { message }
                     }
                 }
                 level = LogLevel.INFO

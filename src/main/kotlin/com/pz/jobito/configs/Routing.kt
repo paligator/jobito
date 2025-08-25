@@ -1,4 +1,4 @@
-package com.pz.jobito.plugins
+package com.pz.jobito.configs
 
 import com.pz.jobito.routes.gitlabRoutes
 import com.pz.jobito.routes.taskRoutes

@@ -1,4 +1,4 @@
-package com.pz.jobito.plugins
+package com.pz.jobito.configs
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*

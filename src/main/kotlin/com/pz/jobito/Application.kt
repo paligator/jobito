@@ -1,9 +1,9 @@
 package com.pz.jobito
 
-import com.pz.jobito.plugins.configureDatabase
-import com.pz.jobito.plugins.configureHTTP
-import com.pz.jobito.plugins.configureRouting
-import com.pz.jobito.plugins.configureSerialization
+import com.pz.jobito.configs.configureDatabase
+import com.pz.jobito.configs.configureHTTP
+import com.pz.jobito.configs.configureRouting
+import com.pz.jobito.configs.configureSerialization
 import io.github.cdimascio.dotenv.dotenv
 import io.ktor.server.application.*
 

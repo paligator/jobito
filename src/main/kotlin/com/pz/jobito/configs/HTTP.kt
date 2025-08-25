@@ -1,4 +1,4 @@
-package com.pz.jobito.plugins
+package com.pz.jobito.configs
 
 import io.ktor.http.*
 import io.ktor.server.application.*

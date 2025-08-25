@@ -1,7 +1,7 @@
 package com.pz.jobito.service.gitlab
 
 import com.pz.jobito.model.gitlab.MergeRequest
-import com.pz.jobito.plugins.HttpClientApp
+import com.pz.jobito.configs.HttpClientApp
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
