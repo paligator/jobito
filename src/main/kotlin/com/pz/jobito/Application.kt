@@ -4,6 +4,7 @@ import com.pz.jobito.configs.configureDatabase
 import com.pz.jobito.configs.configureHTTP
 import com.pz.jobito.configs.configureRouting
 import com.pz.jobito.configs.configureSerialization
+import com.pz.jobito.configs.configureScheduler
 import io.github.cdimascio.dotenv.dotenv
 import io.ktor.server.application.*
 
@@ -26,4 +27,5 @@ fun Application.module() {
     configureSerialization()
     configureHTTP()
     configureRouting()
+    configureScheduler()
 }

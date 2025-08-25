@@ -56,4 +56,9 @@ class GitlabService {
             throw RuntimeException("GitLab API error: ${httpResponse.status.value} - ${httpResponse.status.description}. Response: $errorBody")
         }
     }
+
+    suspend fun checkMergeRequest() {
+        logger.info { "Checking merge requests..." }
+        val x = this.waitingForMe()
+    }
 }
