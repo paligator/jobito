@@ -24,6 +24,7 @@ dependencies {
     implementation("io.ktor:ktor-server-call-logging:2.3.4")
     implementation("io.ktor:ktor-server-default-headers:2.3.4")
     implementation("io.ktor:ktor-server-cors:2.3.4")
+    implementation("io.ktor:ktor-server-websockets:2.3.4")
     
     // Ktor Client
     implementation("io.ktor:ktor-client-core:2.3.4")

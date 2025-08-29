@@ -2,6 +2,7 @@ package com.pz.jobito.service.gitlab
 
 import com.pz.jobito.model.gitlab.MergeRequest
 import com.pz.jobito.configs.HttpClientApp
+import com.pz.jobito.service.WebSocketManager
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
@@ -59,6 +60,16 @@ class GitlabService {
 
     suspend fun checkMergeRequest() {
         logger.info { "Checking merge requests..." }
-        val x = this.waitingForMe()
+        try {
+            val mergeRequests = this.waitingForMe()
+            if (mergeRequests.isNotEmpty()) {
+                logger.info { "Found ${mergeRequests.size} merge requests waiting for review" }
+                WebSocketManager.broadcastMergeRequests(mergeRequests)
+            } else {
+                logger.debug { "No merge requests waiting for review" }
+            }
+        } catch (e: Exception) {
+            logger.error("Error checking merge requests", e)
+        }
     }
 }
