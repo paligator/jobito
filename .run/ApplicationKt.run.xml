@@ -1,12 +1,22 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ApplicationKt" type="KtorApplicationConfigurationType" factoryName="Ktor" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="com.pz.jobito.ApplicationKt" />
-    <module name="jobito.main" />
+    <module name="jobito-be.main" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.pz.jobito.*" />
         <option name="ENABLED" value="true" />
       </pattern>
+    </extension>
+    <extension name="net.ashald.envfile">
+      <option name="IS_ENABLED" value="false" />
+      <option name="IS_SUBST" value="false" />
+      <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+      <option name="IS_IGNORE_MISSING_FILES" value="false" />
+      <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+      <ENTRIES>
+        <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+      </ENTRIES>
     </extension>
     <option name="alternativeJrePath" />
     <option name="alternativeJrePathEnabled" value="false" />
@@ -16,7 +26,7 @@
     <option name="programParameters" value="" />
     <option name="shortenCommandLine" />
     <option name="vmParameters" />
-    <option name="workingDirectory" value="C:\ws\jobito" />
+    <option name="workingDirectory" value="D:\Workspaces\jobito\jobito-be" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

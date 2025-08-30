@@ -1,0 +1,8 @@
+CREATE USER 'jobito_user'@'%' IDENTIFIED BY 'Heslo123';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE  ON jobito.* TO 'jobito_user'@'%';
+(or everything GRANT ALL PRIVILEGES ON *.* TO 'jobito_user'@'localhost' WITH GRANT OPTION;)
+
+
+
+ ./gradlew clean shadowJar && docker build -t jobito-be . && docker run --env-file .env -p 2000:2000 jobito-be
+

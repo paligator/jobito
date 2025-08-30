@@ -3,6 +3,7 @@ package com.pz.jobito.service.gitlab
 import com.pz.jobito.model.gitlab.MergeRequest
 import com.pz.jobito.configs.HttpClientApp
 import com.pz.jobito.service.WebSocketManager
+import com.typesafe.config.ConfigFactory
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
@@ -13,6 +14,8 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class GitlabService {
+    val config = ConfigFactory.load()
+
     companion object {
         private val logger = KotlinLogging.logger {}
     }
@@ -31,9 +34,9 @@ class GitlabService {
     )
 
     suspend fun waitingForMe(): List<MergeRequest> {
-        val gitlabBaseUrl = System.getProperty("GITLAB_BASE_URL") 
-        val gitlabUserId = System.getProperty("GITLAB_USER_ID")
-        val gitlabToken = System.getProperty("GIT_LAB_ACCESS_TOKEN")
+        val gitlabBaseUrl = config.getString("gitlab.base_url")
+        val gitlabUserId = config.getString("gitlab.user_id")
+        val gitlabToken = config.getString("gitlab.access_token")
         val url = "$gitlabBaseUrl/api/v4/merge_requests?state=opened&reviewer_id=$gitlabUserId"
         
         val httpResponse: HttpResponse = HttpClientApp.client.get(url) {
