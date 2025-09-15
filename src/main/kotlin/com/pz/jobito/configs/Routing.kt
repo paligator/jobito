@@ -1,6 +1,7 @@
 package com.pz.jobito.configs
 
 import com.pz.jobito.routes.gitlabRoutes
+import com.pz.jobito.routes.healthRoutes
 import com.pz.jobito.routes.taskRoutes
 import com.pz.jobito.routes.webSocketRoutes
 import io.ktor.server.application.*
@@ -12,6 +13,7 @@ fun Application.configureRouting() {
             taskRoutes()
             gitlabRoutes()
             webSocketRoutes()
+            healthRoutes()
         }
     }
 }
