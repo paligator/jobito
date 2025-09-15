@@ -34,7 +34,7 @@ fun configureDatabase() {
         .locations("classpath:db/migration")
         .load()
     
-    flyway.migrate()
+   // flyway.migrate()
     
     Database.connect(dataSource)
 
