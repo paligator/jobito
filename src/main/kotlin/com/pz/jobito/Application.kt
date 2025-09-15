@@ -1,5 +1,6 @@
 package com.pz.jobito
 
+import com.pz.jobito.configs.configureAuthentication
 import com.pz.jobito.configs.configureDatabase
 import com.pz.jobito.configs.configureHTTP
 import com.pz.jobito.configs.configureRouting
@@ -27,6 +28,7 @@ fun Application.module() {
     configureDatabase()
     configureSerialization()
     configureHTTP()
+    configureAuthentication()
     configureWebSocket()
     configureRouting()
     configureScheduler()

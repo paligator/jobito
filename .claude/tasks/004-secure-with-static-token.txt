@@ -1,0 +1,4 @@
+# Secure application with Static API Key
+-for this application, there will be just one client
+-this client will always have the same API Key
+-client will sent API Key in authorization header
